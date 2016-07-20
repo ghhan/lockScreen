@@ -17,8 +17,8 @@ class LockScreenIntentReceiver : BroadcastReceiver(){
 
     private fun start_lockscreen(context: Context?){
 
-       // var mIntent: Intent = Intent(context, LockScreenActivity.class)
-        //mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        //context!!.startActivity(mIntent)
+       var mIntent = Intent(context, LockScreenActivity::class.java)
+        mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        context!!.startActivity(mIntent)
     }
 }
