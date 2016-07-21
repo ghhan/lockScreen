@@ -10,7 +10,7 @@ import android.view.MotionEvent
 import android.view.WindowManager
 import android.view.WindowManager.LayoutParams
 
-class LockScreenUtils{
+class LockScreenUtils {
 
     private var mOverlayDialog:OverlayDialog? = null
     private var mLockStatusChangedListener:OnLockStatusChangedListener? = null

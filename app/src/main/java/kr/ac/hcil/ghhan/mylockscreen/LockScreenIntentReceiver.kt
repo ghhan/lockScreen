@@ -11,7 +11,7 @@ class LockScreenIntentReceiver : BroadcastReceiver(){
         if( intent!!.action.equals(Intent.ACTION_SCREEN_OFF)
                 || intent.action.equals(Intent.ACTION_SCREEN_ON)
                 || intent.action.equals(Intent.ACTION_BOOT_COMPLETED)) {
-
+            start_lockscreen(context)
         }
     }
 

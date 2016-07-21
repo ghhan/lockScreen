@@ -62,6 +62,14 @@ class LockScreenActivity : Activity(), LockScreenUtils.OnLockStatusChangedListen
         btnUnlock = findViewById(R.id.btnUnlock) as Button?
     }
 
+    fun lockHomeButton(){
+        mLockscreenUtils!!.lock(this)
+    }
+
+    fun unlockHomeButton(){
+        mLockscreenUtils!!.unlock();
+    }
+
 
     override fun onLockStatusChanged(isLocked: Boolean){
         if(!isLocked){
@@ -73,4 +81,25 @@ class LockScreenActivity : Activity(), LockScreenUtils.OnLockStatusChangedListen
         super.onStop()
         unlockHomeButton()
     }
+
+    @Suppress("DEPRECATION")
+    private fun disableKeyguard(){
+        var mKM = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        var mKL:KeyguardManager.KeyguardLock = mKM.newKeyguardLock("IN")
+        mKL.disableKeyguard()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun enableKeyguard(){
+        var mKM = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        var mKL:KeyguardManager.KeyguardLock = mKM.newKeyguardLock("IN")
+        mKL.reenableKeyguard()
+    }
+
+    private fun unlockDevice(){
+        finish()
+    }
+
+
+
 }
